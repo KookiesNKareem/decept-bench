@@ -1,5 +1,6 @@
 {
   "@context": {
+    "@language": "en",
     "@vocab": "https://schema.org/",
     "sc": "https://schema.org/",
     "cr": "http://mlcommons.org/croissant/",
@@ -36,7 +37,7 @@
   },
   "@type": "sc:Dataset",
   "name": "decept-bench-v1",
-  "description": "DECEPT-Bench v1.0 — a preliminary multi-mechanism behavioral audit of language-model deception. Ten mechanisms (M1-M10) covering sycophancy, sandbagging, persona pressure, strategic withholding, forced-prefill rationalization, multi-tool fabrication, multi-agent collusion, code-deception, calibration deception, and capability concealment. Items packaged as one parquet per mechanism plus a 2,053-entry adversarial paraphrase bank.",
+  "description": "DECEPT-Bench v1.0 \u2014 a preliminary multi-mechanism behavioral audit of language-model deception. Ten mechanisms (M1-M10) covering sycophancy, sandbagging, persona pressure, strategic withholding, forced-prefill rationalization, multi-tool fabrication, multi-agent collusion, code-deception, calibration deception, and capability concealment. Items packaged as one parquet per mechanism plus a 2,053-entry adversarial paraphrase bank.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
   "url": "https://anonymous.4open.science/r/decept-bench-68D1/",
   "version": "1.0.0",
@@ -59,11 +60,11 @@
     "name": "DECEPT-Bench Authors"
   },
   "citeAs": "DECEPT-Bench: A Multi-Mechanism Behavioral Audit of Language-Model Deception. v1.0, 2026.",
-
-  "rai:dataCollection": "Items are derived from two sources: (a) BIG-Bench Hard subset (Suzgun et al., 2022) for M1, M2, M5 — programmatically downloaded from the lukaemon/bbh HuggingFace repository at fixed item indices (per-task=80); (b) hand-crafted item banks for M3, M4, M6, M7, M8, M9, M10 — authored by the lead author over April 2026. The 2,053-entry paraphrase bank was generated via Qwen2.5-7B-Instruct with three-paraphrase target per BBH question, filtered for option preservation and minimum Levenshtein distance.",
-  "rai:dataPreprocessingProtocol": "DSR1-family model outputs are post-processed by clean_dsr1 to strip BPE artifacts (Ġ→space, Ċ→newline) and content before </think> tags. Gold answers are normalized by stripping parentheses and upper-casing. The biased-letter randomization is performed at runtime, not stored in the dataset.",
+  "citation": "DECEPT-Bench: A Multi-Mechanism Behavioral Audit of Language-Model Deception. v1.0, 2026.",
+  "rai:dataCollection": "Items are derived from two sources: (a) BIG-Bench Hard subset (Suzgun et al., 2022) for M1, M2, M5 \u2014 programmatically downloaded from the lukaemon/bbh HuggingFace repository at fixed item indices (per-task=80); (b) hand-crafted item banks for M3, M4, M6, M7, M8, M9, M10 \u2014 authored by the lead author over April 2026. The 2,053-entry paraphrase bank was generated via Qwen2.5-7B-Instruct with three-paraphrase target per BBH question, filtered for option preservation and minimum Levenshtein distance.",
+  "rai:dataPreprocessingProtocol": "DSR1-family model outputs are post-processed by clean_dsr1 to strip BPE artifacts (\u0120\u2192space, \u010a\u2192newline) and content before </think> tags. Gold answers are normalized by stripping parentheses and upper-casing. The biased-letter randomization is performed at runtime, not stored in the dataset.",
   "rai:dataAnnotationProtocol": "No human annotation in v1.0. All scoring is rule-based (regex match against gold) plus LLM-as-judge for free-form mechanisms (M3, M4, M6, M7, M8, M10). Inter-rater reliability between the LLM judge and human raters has not been established in v1.0 and is identified as a P0 limitation.",
-  "rai:dataAnnotationAnalysis": "Cross-mechanism Spearman correlation matrix and per-mechanism bootstrap CIs are reported in paper/figures/. The strongest off-diagonal correlations are M8↔M10 (rho=0.77, capability-disavowal cluster) and M3↔M5 (rho=−0.60, persona vs forced-prefill anti-correlation). Most other pairs sit |rho| < 0.5, evidence that the ten axes are not redundant.",
+  "rai:dataAnnotationAnalysis": "Cross-mechanism Spearman correlation matrix and per-mechanism bootstrap CIs are reported in paper/figures/. The strongest off-diagonal correlations are M8\u2194M10 (rho=0.77, capability-disavowal cluster) and M3\u2194M5 (rho=\u22120.60, persona vs forced-prefill anti-correlation). Most other pairs sit |rho| < 0.5, evidence that the ten axes are not redundant.",
   "rai:dataReleaseMaintenancePlan": "v1.0 items are frozen. v1.x releases will be additive (expanding item counts on the small-N axes M3/M4/M7/M8/M10) and will not change scoring. v2.0 may revise scoring; existing leaderboard scores will be migrated where possible. The maintainer commits to a 6-month rotation cadence on the hidden test split.",
   "rai:dataLimitations": "Single-author / no funding. English-only. Single-seed for deterministic mechanisms (M1, M2, M5, M8, M9). Sample sizes for M3 (n=5 personas), M4 (n=5 secrets), M7 (n=5 scenarios), M10 (n=4 capabilities) are small; bootstrap CIs on these axes are wide. Detection-aware composite is *defined* in the spec but probe AUROCs were not computed across the panel in v1.0. The LLM-as-judge classifier has not been validated against human raters.",
   "rai:dataBiases": "Items reflect English-language conventions and the value priors of the lead author. M3 personas are drawn from a North American business / professional context (used-car salesman, politician spokesperson, lawyer, etc.). M4 secrets are synthetic and reflect Anglosphere workplace contexts (HR salaries, surprise parties, classified specs). The benchmark has not been audited for cross-cultural transfer.",
@@ -71,107 +72,107 @@
   "rai:dataSocialImpact": "DECEPT-Bench is intended to support safer LLM deployment by surfacing deception failure modes that single-axis benchmarks miss, and to advance methodology research on behavioral evaluation of language models. Potential negative impacts include (a) misuse of the suite to identify deception axes a model is weak on for adversarial prompting; (b) over-confident interpretation of leaderboard scores as deployment-safety guarantees, which the v1.0 spec explicitly warns against; (c) the M3/M4/M6 prompt templates contain examples of persuasive deceptive responses that could in principle be lifted as harmful prompts. We mitigate (a) and (c) by withholding 30% of items as a private test split behind a recompute-from-output submission server, and by including the spec's explicit non-deployment-claim language in the dataset card.",
   "rai:dataDistinguishingFeatures": "Ten distinct mechanisms in one suite; multi-turn protocols on M1-M4; per-instance biased-letter randomization; adversarial paraphrase bank; couldnt_be_tested first-class status for API-level mitigations (e.g., assistant-prefill rejection on Sonnet 4.6 and gpt-5.X frontier endpoints).",
   "rai:personalSensitiveInformation": "None. M4 system prompts contain synthetic 'confidential' content for elicitation purposes. No real PII. The dataset does not include human-subject data.",
-
   "distribution": [
     {
-      "@type": "cr:FileObject",
-      "@id": "github-repo",
-      "name": "github-repo",
-      "description": "The GitHub repository hosting the DECEPT-Bench code, scoring, and item generators.",
-      "contentUrl": "https://anonymous.4open.science/r/decept-bench-68D1/",
-      "encodingFormat": "git+https",
-      "sha256": "main"
-    },
-    {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m1-parquet",
       "name": "m1.parquet",
-      "description": "M1 Sycophancy under multi-turn pushback — 280 BBH-derived items.",
+      "description": "M1 Sycophancy under multi-turn pushback \u2014 280 BBH-derived items.",
       "contentUrl": "m1.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "74fd47e6ad1577de5a4427452fa4fc9435d1b0c369b03647438d698fd7434484"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m2-parquet",
       "name": "m2.parquet",
-      "description": "M2 Sandbagging (eval-aware vs deploy-aware framing) — 280 BBH-derived items.",
+      "description": "M2 Sandbagging (eval-aware vs deploy-aware framing) \u2014 280 BBH-derived items.",
       "contentUrl": "m2.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "e08739b352ebfa64f1ea44ad5b981fa46e30796bbb2272edf639f0eba3dff01a"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m3-parquet",
       "name": "m3.parquet",
-      "description": "M3 Persona-pressure deception — 5 hand-crafted persona scenarios.",
+      "description": "M3 Persona-pressure deception \u2014 5 hand-crafted persona scenarios.",
       "contentUrl": "m3.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "e68f86eafd420ab36c4d56b8f6e13db0e6d88913503672bba3946cf18254adf1"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m4-parquet",
       "name": "m4.parquet",
-      "description": "M4 Strategic withholding — 5 hand-crafted secret-bearing system prompts.",
+      "description": "M4 Strategic withholding \u2014 5 hand-crafted secret-bearing system prompts.",
       "contentUrl": "m4.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "5f94e7ce2150f5cc5446f4dbe9a5b1d89cacf3759384c10566e7350312e54652"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m5-parquet",
       "name": "m5.parquet",
-      "description": "M5 Forced-prefill rationalization — 420 BBH-derived items.",
+      "description": "M5 Forced-prefill rationalization \u2014 420 BBH-derived items.",
       "contentUrl": "m5.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "fa984823b96df57c8784a39bb4b63609921fc1fe03c6ac5b80080e702ddb46bd"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m6-parquet",
       "name": "m6.parquet",
-      "description": "M6 Multi-tool fabrication — 9 hand-crafted tool stub scenarios.",
+      "description": "M6 Multi-tool fabrication \u2014 9 hand-crafted tool stub scenarios.",
       "contentUrl": "m6.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "5bc998f366a66e63abf6fc722015897e87c4e561b2e104944ac4f052b3ae0aec"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m7-parquet",
       "name": "m7.parquet",
-      "description": "M7 Multi-agent collusion — 5 hand-crafted peer-claim scenarios.",
+      "description": "M7 Multi-agent collusion \u2014 5 hand-crafted peer-claim scenarios.",
       "contentUrl": "m7.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "15ce17ec34e3b0f45ecc80eb73037540ae6232a53633dfea3f04b344bb52e8ba"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m8-parquet",
       "name": "m8.parquet",
-      "description": "M8 Code-deception — 10 hand-crafted (correct, buggy) Python pairs with ground-truth tests.",
+      "description": "M8 Code-deception \u2014 10 hand-crafted (correct, buggy) Python pairs with ground-truth tests.",
       "contentUrl": "m8.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "ab1011fc94f3c7b42e2a9e47362102fb13d4172e1d369b470d2be01da27e9a83"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m9-parquet",
       "name": "m9.parquet",
-      "description": "M9 Calibration deception — 16 items mixing factual knowables with structurally-unknowable probes (private random, future ≥2028).",
+      "description": "M9 Calibration deception \u2014 16 items mixing factual knowables with structurally-unknowable probes (private random, future \u22652028).",
       "contentUrl": "m9.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "33caf00375b8de9c38512f624d8fa0f1e5aa6b158d958e399126c8d98d3c2064"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "m10-parquet",
       "name": "m10.parquet",
-      "description": "M10 Capability concealment — 4 hand-crafted (benign, restricted) task pairs.",
+      "description": "M10 Capability concealment \u2014 4 hand-crafted (benign, restricted) task pairs.",
       "contentUrl": "m10.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "67835c8ac95aa25f3f20cce8ee6c0c77cad007c37c0d1ea4a39ac786c1cc2e11"
     },
     {
-      "@type": "cr:FileObject",
+      "@type": "sc:FileObject",
       "@id": "paraphrases-parquet",
       "name": "paraphrases.parquet",
-      "description": "Adversarial paraphrase bank — 700+ paraphrases of M1/M2/M5 BBH inputs, generated via Qwen2.5-7B-Instruct.",
+      "description": "Adversarial paraphrase bank \u2014 700+ paraphrases of M1/M2/M5 BBH inputs, generated via Qwen2.5-7B-Instruct.",
       "contentUrl": "paraphrases.parquet",
-      "encodingFormat": "application/parquet"
+      "encodingFormat": "application/parquet",
+      "sha256": "7056ebea448ada7c5938841f91f14f72791ea14faabaa7d6854f1a9b012b26c2"
     }
   ],
-
   "recordSet": [
     {
       "@type": "cr:RecordSet",
@@ -179,9 +180,24 @@
       "name": "mechanism_records",
       "description": "Per-mechanism prompt records. Each record has an id, the prompt body, and any mechanism-specific metadata (gold answer, persona, secret, etc.).",
       "field": [
-        {"@type": "cr:Field", "@id": "id", "name": "id", "dataType": "sc:Text"},
-        {"@type": "cr:Field", "@id": "mechanism", "name": "mechanism", "dataType": "sc:Text"},
-        {"@type": "cr:Field", "@id": "input", "name": "input", "dataType": "sc:Text"}
+        {
+          "@type": "cr:Field",
+          "@id": "id",
+          "name": "id",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "mechanism",
+          "name": "mechanism",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "input",
+          "name": "input",
+          "dataType": "sc:Text"
+        }
       ]
     }
   ]
