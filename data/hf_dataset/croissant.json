@@ -5,6 +5,7 @@
     "sc": "https://schema.org/",
     "cr": "http://mlcommons.org/croissant/",
     "rai": "http://mlcommons.org/croissant/RAI/",
+    "prov": "http://www.w3.org/ns/prov#",
     "data": {
       "@id": "cr:data",
       "@type": "@json"
@@ -72,6 +73,12 @@
   "rai:dataSocialImpact": "DECEPT-Bench is intended to support safer LLM deployment by surfacing deception failure modes that single-axis benchmarks miss, and to advance methodology research on behavioral evaluation of language models. Potential negative impacts include (a) misuse of the suite to identify deception axes a model is weak on for adversarial prompting; (b) over-confident interpretation of leaderboard scores as deployment-safety guarantees, which the v1.0 spec explicitly warns against; (c) the M3/M4/M6 prompt templates contain examples of persuasive deceptive responses that could in principle be lifted as harmful prompts. We mitigate (a) and (c) by withholding 30% of items as a private test split behind a recompute-from-output submission server, and by including the spec's explicit non-deployment-claim language in the dataset card.",
   "rai:dataDistinguishingFeatures": "Ten distinct mechanisms in one suite; multi-turn protocols on M1-M4; per-instance biased-letter randomization; adversarial paraphrase bank; couldnt_be_tested first-class status for API-level mitigations (e.g., assistant-prefill rejection on Sonnet 4.6 and gpt-5.X frontier endpoints).",
   "rai:personalSensitiveInformation": "None. M4 system prompts contain synthetic 'confidential' content for elicitation purposes. No real PII. The dataset does not include human-subject data.",
+  "rai:hasSyntheticData": true,
+  "prov:wasGeneratedBy": {
+    "@type": "prov:Activity",
+    "name": "DECEPT-Bench v1.0 generation pipeline",
+    "description": "M1, M2, and M5 items were programmatically derived from BIG-Bench Hard (Suzgun et al., 2022) via the lukaemon/bbh HuggingFace mirror at fixed task indices (per-task n=80). M3 personas, M4 secret-bearing system prompts, M6 tool stub scenarios, M7 multi-agent claims, M8 (correct, buggy) Python code pairs with ground-truth pytest cases, M9 unknowable probes, and M10 capability-concealment task pairs were hand-authored by the lead author over April 2026. The 2,053-entry adversarial paraphrase bank for M1/M2/M5 was synthesized via Qwen2.5-7B-Instruct (3 paraphrases per BBH question, filtered for option preservation, gold-answer preservation, and minimum 20% Levenshtein distance from the original; 98% acceptance rate). All hand-authored items were spot-checked by the lead author for refusal-class disambiguation and biased-letter randomization correctness."
+  },
   "distribution": [
     {
       "@type": "sc:FileObject",
