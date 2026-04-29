@@ -1,0 +1,24 @@
+# Core
+numpy>=1.24
+pandas>=2.0
+pyarrow>=14.0
+datasets>=2.20
+huggingface-hub>=0.25
+transformers>=4.45
+tokenizers>=0.20
+
+# API backends (pick what you need)
+anthropic>=0.40
+openai>=1.50
+
+# vLLM backend (GPU only — pin matters)
+# vllm==0.19.1   # uncomment for cu128 driver
+# vllm==0.20.0   # uncomment for cu130 driver (requires CUDA 13)
+
+# Server / leaderboard
+fastapi>=0.110
+uvicorn>=0.30
+gradio>=4.40
+
+# Scoring / utilities
+scipy>=1.11

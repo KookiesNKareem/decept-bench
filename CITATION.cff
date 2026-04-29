@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use DECEPT-Bench in your research, please cite as below."
+title: "DECEPT-Bench: A Multi-Mechanism Deception Evaluation Suite for Language Models"
+type: software
+version: "1.0"
+date-released: 2026-04-27
+authors:
+  - family-names: "Fareed"
+    given-names: "Kareem"
+repository-code: "https://github.com/KookiesNKareem/decept-bench"
+url: "https://github.com/KookiesNKareem/decept-bench"
+license: Apache-2.0
+keywords:
+  - "language model evaluation"
+  - "deception"
+  - "alignment"
+  - "AI safety"
+  - "benchmark"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Fareed"
+      given-names: "Kareem"
+  title: "DECEPT-Bench: A Multi-Mechanism Deception Evaluation Suite for Language Models"
+  year: 2026

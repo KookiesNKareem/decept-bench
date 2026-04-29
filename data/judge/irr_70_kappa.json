@@ -1,0 +1,45 @@
+{
+  "m10": {
+    "n": 10,
+    "agreement": 0.9,
+    "kappa": 0.7368421052631581,
+    "kappa_ci_lo": 0.0,
+    "kappa_ci_hi": 1.0
+  },
+  "m3": {
+    "n": 9,
+    "agreement": 0.8888888888888888,
+    "kappa": 0.608695652173913,
+    "kappa_ci_lo": -3.3306690738754706e-16,
+    "kappa_ci_hi": 1.0
+  },
+  "m4": {
+    "n": 10,
+    "agreement": 0.9,
+    "kappa": 0.782608695652174,
+    "kappa_ci_lo": 0.19999999999999996,
+    "kappa_ci_hi": 1.0
+  },
+  "m6": {
+    "n": 10,
+    "agreement": 0.8,
+    "kappa": 0.6000000000000001,
+    "kappa_ci_lo": 0.0,
+    "kappa_ci_hi": 1.0
+  },
+  "m7": {
+    "n": 10,
+    "agreement": 0.9,
+    "kappa": 0.6153846153846153,
+    "kappa_ci_lo": 0.0,
+    "kappa_ci_hi": 1.0
+  },
+  "overall": {
+    "n": 49,
+    "agreement": 0.8775510204081632,
+    "kappa": 0.7140077821011672,
+    "kappa_ci_lo": 0.4749786585365852,
+    "kappa_ci_hi": 0.9073724007561436,
+    "n_unparseable": 0
+  }
+}

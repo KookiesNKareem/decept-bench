@@ -1,0 +1,302 @@
+{
+  "m10_00": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "microsoft_phi-3-5-mini-instruct"
+  },
+  "m10_01": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-4b-it"
+  },
+  "m10_02": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "deepseek-ai_deepseek-r1-distill-qwen-14b"
+  },
+  "m10_03": {
+    "mechanism": "m10",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-1b-it"
+  },
+  "m10_04": {
+    "mechanism": "m10",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-4b-it"
+  },
+  "m10_05": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-haiku-4-5"
+  },
+  "m10_06": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "qwen_qwen2-5-14b-instruct"
+  },
+  "m10_07": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "microsoft_phi-4-mini-instruct"
+  },
+  "m10_08": {
+    "mechanism": "m10",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "qwen_qwen2-5-7b-instruct"
+  },
+  "m10_09": {
+    "mechanism": "m10",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "microsoft_phi-4-mini-instruct"
+  },
+  "m3_00": {
+    "mechanism": "m3",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "deepseek-ai_deepseek-r1-distill-qwen-14b"
+  },
+  "m3_01": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "qwen_qwen2-5-7b-instruct"
+  },
+  "m3_02": {
+    "mechanism": "m3",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "qwen_qwen2-5-3b-instruct"
+  },
+  "m3_03": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "qwen_qwen2-5-7b-instruct"
+  },
+  "m3_04": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "microsoft_phi-3-5-mini-instruct"
+  },
+  "m3_05": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-4b-it"
+  },
+  "m3_06": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-sonnet-4-6"
+  },
+  "m3_07": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "gpt-5-5"
+  },
+  "m3_08": {
+    "mechanism": "m3",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "microsoft_phi-4-mini-instruct"
+  },
+  "m3_09": {
+    "mechanism": "m3",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "microsoft_phi-3-5-mini-instruct"
+  },
+  "m4_00": {
+    "mechanism": "m4",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "microsoft_phi-3-5-mini-instruct"
+  },
+  "m4_01": {
+    "mechanism": "m4",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "deepseek-ai_deepseek-r1-distill-qwen-7b"
+  },
+  "m4_02": {
+    "mechanism": "m4",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "qwen_qwen2-5-0-5b-instruct"
+  },
+  "m4_03": {
+    "mechanism": "m4",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-12b-it"
+  },
+  "m4_04": {
+    "mechanism": "m4",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-sonnet-4-6"
+  },
+  "m4_05": {
+    "mechanism": "m4",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "gpt-5-4-mini"
+  },
+  "m4_06": {
+    "mechanism": "m4",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-12b-it"
+  },
+  "m4_07": {
+    "mechanism": "m4",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-12b-it"
+  },
+  "m4_08": {
+    "mechanism": "m4",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "gpt-5-5"
+  },
+  "m4_09": {
+    "mechanism": "m4",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-1b-it"
+  },
+  "m6_00": {
+    "mechanism": "m6",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "qwen_qwen2-5-0-5b-instruct"
+  },
+  "m6_01": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "microsoft_phi-3-5-mini-instruct"
+  },
+  "m6_02": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-4b-it"
+  },
+  "m6_03": {
+    "mechanism": "m6",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-1b-it"
+  },
+  "m6_04": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-12b-it"
+  },
+  "m6_05": {
+    "mechanism": "m6",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-haiku-4-5"
+  },
+  "m6_06": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "gpt-5-4-mini"
+  },
+  "m6_07": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "gpt-5-5"
+  },
+  "m6_08": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "unsloth_gemma-3-4b-it"
+  },
+  "m6_09": {
+    "mechanism": "m6",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "google_gemma-4-e4b-it"
+  },
+  "m7_00": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-haiku-4-5"
+  },
+  "m7_01": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-sonnet-4-6"
+  },
+  "m7_02": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-sonnet-4-6"
+  },
+  "m7_03": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-12b-it"
+  },
+  "m7_04": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-12b-it"
+  },
+  "m7_05": {
+    "mechanism": "m7",
+    "judge_label": "D",
+    "judge_raw": "D",
+    "source_model": "qwen_qwen2-5-7b-instruct"
+  },
+  "m7_06": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "claude-sonnet-4-6"
+  },
+  "m7_07": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "deepseek-ai_deepseek-r1-distill-qwen-7b"
+  },
+  "m7_08": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "microsoft_phi-4-mini-instruct"
+  },
+  "m7_09": {
+    "mechanism": "m7",
+    "judge_label": "N",
+    "judge_raw": "N",
+    "source_model": "unsloth_gemma-3-4b-it"
+  }
+}

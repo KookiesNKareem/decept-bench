@@ -1,0 +1,21 @@
+# sed -f script for `make anon_zip` to scrub author identity from the
+# submission tarball. Copy this file to `.anon_patterns` (gitignored) and
+# fill in your own identity tokens, then `make anon_zip`.
+#
+# Each line is a sed command. Use `s|pat|repl|g` (pipe delimiter so URLs
+# don't need escaping). Order: most-specific first.
+#
+# Example:
+#   s|https://github.com/<your-username>/decept-bench|<repo-URL-withheld-for-double-blind-review>|g
+#   s|<your-username>|anonymous|g
+#   s|<Your Full Name>|Anonymous Authors|g
+#   s|"<YourFamilyName>"|"Anonymous"|g
+#   s|"<YourGivenName>"|""|g
+#   s|<your-email>@<domain>|anonymous@example.invalid|g
+#
+# After `make anon_zip`, manually grep the staged tree at
+# /tmp/decept-bench-anon for any tokens you missed before uploading
+# submission.zip.
+
+s|https://github.com/<your-username>/decept-bench|<repo-URL-withheld-for-double-blind-review>|g
+s|github.com/<your-username>/decept-bench|<repo-URL-withheld-for-double-blind-review>|g

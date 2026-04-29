@@ -1,0 +1,98 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# IDE / editors
+.idea/
+.vscode/
+*.swp
+*~
+*.bak
+.DS_Store
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Run artifacts (regenerated)
+*.log
+runs/
+logs/
+
+# Local data we don't ship
+data/em_datasets/
+data/v0_legacy/
+data/smoke/
+data/private_test/
+data/decept-v1-*/
+
+# data/hf_dataset/ is a build artifact (regenerable via `make hf-pack`).
+# We commit only the README + croissant metadata so the dataset card and
+# license are visible at-rest; the parquets themselves stay local.
+data/hf_dataset/*
+!data/hf_dataset/README.md
+!data/hf_dataset/croissant.json
+
+# Local pod / cache layouts
+pip_target/
+.cache/
+.huggingface/
+
+# Secrets — defensive (api keys, tokens, credentials)
+*.key
+*.pem
+secrets.json
+credentials.json
+*_secret*
+*_token*
+
+# Large model artifacts (if anyone clones weights into the repo)
+*.safetensors
+*.bin
+*.gguf
+*.pt
+*.pth
+*.onnx
+*.ckpt
+
+# OS / misc
+Thumbs.db
+*.tmp
+internal/
+data/irr/
+
+# Paper drafts: kept locally, not shipped in the public repo
+paper/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.synctex.gz
+
+# Anonymized submission archive (built by 'make anon_zip')
+submission.zip
+
+# Local-only sed script for 'make anon_zip' (contains personal identity)
+.anon_patterns

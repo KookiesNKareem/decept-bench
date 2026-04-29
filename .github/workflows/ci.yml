@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  scorer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install numpy pandas pytest scipy
+      - name: Run scorer test suite
+        run: pytest tests/ -v -p no:anchorpy
+      - name: Smoke-test scorer on bundled fixtures
+        run: |
+          python src/decept_score_v1.py --data_dir data/haiku --out_dir /tmp/scoreout
+          test -f /tmp/scoreout/scores.json
+          python -c "import json; d=json.load(open('/tmp/scoreout/scores.json')); assert d['leaderboard'][0]['model']=='claude-haiku-4-5'; print('haiku composite_raw:', d['leaderboard'][0]['composite_raw'])"
+      - name: Smoke-test figure generation
+        run: python src/decept_figures.py
