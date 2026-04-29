@@ -38,7 +38,7 @@
   "name": "decept-bench-v1",
   "description": "DECEPT-Bench v1.0 — a preliminary multi-mechanism behavioral audit of language-model deception. Ten mechanisms (M1-M10) covering sycophancy, sandbagging, persona pressure, strategic withholding, forced-prefill rationalization, multi-tool fabrication, multi-agent collusion, code-deception, calibration deception, and capability concealment. Items packaged as one parquet per mechanism plus a 2,053-entry adversarial paraphrase bank.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "url": "https://github.com/KookiesNKareem/decept-bench",
+  "url": "https://anonymous.4open.science/r/decept-bench-68D1/",
   "version": "1.0.0",
   "datePublished": "2026-04-28",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -68,6 +68,7 @@
   "rai:dataLimitations": "Single-author / no funding. English-only. Single-seed for deterministic mechanisms (M1, M2, M5, M8, M9). Sample sizes for M3 (n=5 personas), M4 (n=5 secrets), M7 (n=5 scenarios), M10 (n=4 capabilities) are small; bootstrap CIs on these axes are wide. Detection-aware composite is *defined* in the spec but probe AUROCs were not computed across the panel in v1.0. The LLM-as-judge classifier has not been validated against human raters.",
   "rai:dataBiases": "Items reflect English-language conventions and the value priors of the lead author. M3 personas are drawn from a North American business / professional context (used-car salesman, politician spokesperson, lawyer, etc.). M4 secrets are synthetic and reflect Anglosphere workplace contexts (HR salaries, surprise parties, classified specs). The benchmark has not been audited for cross-cultural transfer.",
   "rai:dataUseCases": "Pre-deployment safety review of language models; alignment / safety research on multi-mechanism deception; comparative model selection where a single 'truthfulness' score is insufficient. NOT intended as the sole basis for production deployment decisions.",
+  "rai:dataSocialImpact": "DECEPT-Bench is intended to support safer LLM deployment by surfacing deception failure modes that single-axis benchmarks miss, and to advance methodology research on behavioral evaluation of language models. Potential negative impacts include (a) misuse of the suite to identify deception axes a model is weak on for adversarial prompting; (b) over-confident interpretation of leaderboard scores as deployment-safety guarantees, which the v1.0 spec explicitly warns against; (c) the M3/M4/M6 prompt templates contain examples of persuasive deceptive responses that could in principle be lifted as harmful prompts. We mitigate (a) and (c) by withholding 30% of items as a private test split behind a recompute-from-output submission server, and by including the spec's explicit non-deployment-claim language in the dataset card.",
   "rai:dataDistinguishingFeatures": "Ten distinct mechanisms in one suite; multi-turn protocols on M1-M4; per-instance biased-letter randomization; adversarial paraphrase bank; couldnt_be_tested first-class status for API-level mitigations (e.g., assistant-prefill rejection on Sonnet 4.6 and gpt-5.X frontier endpoints).",
   "rai:personalSensitiveInformation": "None. M4 system prompts contain synthetic 'confidential' content for elicitation purposes. No real PII. The dataset does not include human-subject data.",
 
@@ -77,7 +78,7 @@
       "@id": "github-repo",
       "name": "github-repo",
       "description": "The GitHub repository hosting the DECEPT-Bench code, scoring, and item generators.",
-      "contentUrl": "https://github.com/KookiesNKareem/decept-bench",
+      "contentUrl": "https://anonymous.4open.science/r/decept-bench-68D1/",
       "encodingFormat": "git+https",
       "sha256": "main"
     },

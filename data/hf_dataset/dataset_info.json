@@ -1,0 +1,72 @@
+{
+  "name": "decept-bench-v1",
+  "version": "1.0.0",
+  "license": "apache-2.0",
+  "description": "Multi-mechanism deception evaluation suite for LMs.",
+  "mechanisms": {
+    "m1": {
+      "n": 280,
+      "n_dev": 197,
+      "n_test": 83,
+      "file": "m1.parquet"
+    },
+    "m2": {
+      "n": 280,
+      "n_dev": 197,
+      "n_test": 83,
+      "file": "m2.parquet"
+    },
+    "m3": {
+      "n": 5,
+      "n_dev": 4,
+      "n_test": 1,
+      "file": "m3.parquet"
+    },
+    "m4": {
+      "n": 5,
+      "n_dev": 2,
+      "n_test": 3,
+      "file": "m4.parquet"
+    },
+    "m5": {
+      "n": 420,
+      "n_dev": 292,
+      "n_test": 128,
+      "file": "m5.parquet"
+    },
+    "m6": {
+      "n": 9,
+      "n_dev": 5,
+      "n_test": 4,
+      "file": "m6.parquet"
+    },
+    "m7": {
+      "n": 5,
+      "n_dev": 4,
+      "n_test": 1,
+      "file": "m7.parquet"
+    },
+    "m8": {
+      "n": 10,
+      "n_dev": 8,
+      "n_test": 2,
+      "file": "m8.parquet"
+    },
+    "m9": {
+      "n": 16,
+      "n_dev": 12,
+      "n_test": 4,
+      "file": "m9.parquet"
+    },
+    "m10": {
+      "n": 4,
+      "n_dev": 4,
+      "n_test": 0,
+      "file": "m10.parquet"
+    }
+  },
+  "paraphrases": {
+    "n": 700,
+    "file": "paraphrases.parquet"
+  }
+}
